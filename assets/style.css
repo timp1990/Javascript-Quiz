@@ -1,0 +1,76 @@
+:root{
+    --generalPadding: 30px;
+    --doublePadding: 60px;
+}
+
+html {
+    font-size: 25px;
+    font-family: Calibri, Verdana, Geneva
+    padding: var(--generalPadding);
+    margin: 50px;
+    background-color: lightgrey;
+    text-align: center;
+
+}
+
+h1 {
+    font-size: 1.5rem;
+    color: blue;
+    text-align: center;
+}
+
+#bannerDiv {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+#quizAreaDiv {
+    display: flex;
+    flex-wrap:wrap;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: var(--doublePadding);
+}
+
+/* set initials form default display to none */
+#formDiv, #highScoresDisplayDiv {
+  display: none;
+}
+
+/* CSS startEndButton */
+.startButtonClass {
+  background-color: #fbeee0;
+  border: 2px solid #422800;
+  border-radius: 30px;
+  box-shadow: #422800 4px 4px 0 0;
+  color: #422800;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 600;
+  font-size: 18px;
+  padding: 0 18px;
+  line-height: 50px;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  margin: var(--generalPadding);
+}
+
+.startButtonClass:hover {
+  background-color: #fff;
+}
+
+.startButtonClass:active {
+  box-shadow: #422800 2px 2px 0 0;
+  transform: translate(2px, 2px);
+}
+
+@media (min-width: 768px) {
+  .startButtonClass {
+    min-width: 120px;
+    padding: 0 25px;
+  }
+}

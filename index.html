@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/style.css">
+    <title>Quiz</title>
+</head>
+
+<body>
+    <h1>Pop Quiz!</h1>
+    <main>
+        <div id="bannerDiv">
+            <div id="highScoresDiv">View High Scores</div>
+            <div id="timerDiv">Time Left: ? </div>
+        </div>
+
+        <div id="quizAreaDiv">
+            <div id="questionDiv"></div>
+            <div class="answerOptionsButton" id="answerOptionsDiv">
+                <ul id="answerOptionsUL"></ul>
+            </div>
+        </div>
+        <div id="startButtonDiv"></div>
+        <div id="correctOrIncorrectDiv"></div>
+
+        <div id="formDiv">
+            <form action="/action_page.php">
+                <label for="initials">Enter Your Initials:</label><br>
+                <input type="text" id="initials" name="initials"><br>
+                <input type="submit" value="Submit" id="submitInitialsButton">
+            </form>
+        </div>
+        <div id="highScoresDisplayDiv">
+            <button type="button" class="startButtonClass" id="backButton">Back</button>
+            <button type="button" class="startButtonClass" id="clearButton">Clear</button>
+            <ul id="highScoresDisplayUL"></ul>
+        </div>
+
+    </main>
+    <script src="./script.js"></script>
+
+
+</body>
+
+</html>
