@@ -46,7 +46,7 @@ var question2 = {
 }
 
 var question3 = {
-    question: "What is JS short for?",
+    question: "What type of file has the .js extension?",
     answer: 'javascript',
     fake1: 'json',
     fake2: 'typescript',
@@ -78,9 +78,10 @@ function startTimer() {
     var timer = setInterval(function () {
         timerDiv.textContent = "Time Left: " + timerCount;
         timerCount--;
-        if (timerCount === 0) {
+        if (timerCount <= 0) {
             clearInterval(timer);
             timerDiv.textContent = "Time Left: " + timerCount;
+            endPage();
         }
         if (gameOver) {
             clearInterval(timer);
@@ -107,7 +108,12 @@ function shuffle(array) {
 
 function endPage() {
     // Return All done message and allow user to enter initials
-    questionDiv.innerHTML = "<h2>All done!</h2>";
+    if (timerCount >= 0) {
+        questionDiv.innerHTML = "<h2>All done!</h2>";
+    } else {
+        questionDiv.innerHTML = "<h2>Time's Up!</h2>";
+    }
+
     answerOptionsDiv.innerHTML = "<p>Your final score is " + scoreCount + "</p>"
     correctOrIncorrectDiv.innerHTML = "";
     formDiv.setAttribute("style", "display: block");
@@ -134,14 +140,14 @@ function restart(event) {
 }
 
 function correctAnswer() {
-    correctOrIncorrectDiv.innerHTML = "<p>Correct Answer</p>";
+    correctOrIncorrectDiv.innerHTML = "<p>Correct! </p>";
     questionIndex++;
     scoreCount++;
     runQuiz();
 }
 
 function incorrectAnswer() {
-    correctOrIncorrectDiv.innerHTML = "<p> Incorrect Answer </p>";
+    correctOrIncorrectDiv.innerHTML = "<p> Incorrect - You lost 10 seconds </p>";
     questionIndex++;
     timerCount = timerCount - 10;
     runQuiz();
@@ -213,7 +219,7 @@ function homePage() {
 
     // Write a button item to the main div
     var startQuizButton = document.createElement("button");
-    startQuizButton.textContent = "Start";
+    startQuizButton.textContent = "Start Quiz";
     startQuizButton.setAttribute("class", "startButtonClass")
 
     // Add button to div
@@ -248,7 +254,7 @@ function showHighScores() {
     var listOfHighScores = JSON.parse(localStorage.getItem("allHighScores"));
     for (var key in listOfHighScores) {
         var li = document.createElement("li");
-        li.textContent = key + listOfHighScores[key];
+        li.textContent = "Initials: " + key + "Score: " + listOfHighScores[key];
         highScoresDisplayUL.append(li);
 
     }
@@ -258,8 +264,6 @@ function showHighScores() {
         allHighScores = {};
         document.location.reload(true);
     });
-
-
 
 }
 

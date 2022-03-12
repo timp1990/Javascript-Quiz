@@ -5,17 +5,16 @@
 
 html {
     font-size: 25px;
-    font-family: Calibri, Verdana, Geneva
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     padding: var(--generalPadding);
     margin: 50px;
-    background-color: lightgrey;
+    background-color: #b98f63;
     text-align: center;
 
 }
 
 h1 {
-    font-size: 1.5rem;
-    color: blue;
+    font-size: 2rem;
     text-align: center;
 }
 
@@ -73,4 +72,14 @@ h1 {
     min-width: 120px;
     padding: 0 25px;
   }
+}
+
+#highScoresDisplayUL {
+  display: flex;
+  display: wrap;
+  flex-direction: column;
+  margin: var(--doublePadding);
+  padding: var(--generalPadding);
+  font-size: 1.5rem;
+  list-style-type: none; /* Remove bullets */
 }
