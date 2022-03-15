@@ -1,4 +1,4 @@
-# HW-Wk4-Quiz
+# Javascript Quiz
 A multiple choice quiz
 
 ## Site Link
