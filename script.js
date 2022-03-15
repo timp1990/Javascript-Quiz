@@ -231,14 +231,6 @@ function homePage() {
 
 // ----------------------------------------------------------------------------------
 
-
-
-// Run the program --------------------------------------------------------------------------------------------------
-homePage();
-
-// Add Event Listeners
-highScoresDiv.addEventListener("click", showHighScores);
-
 function showHighScores() {
 
     startButtonDiv.innerHTML = "";
@@ -254,7 +246,7 @@ function showHighScores() {
     var listOfHighScores = JSON.parse(localStorage.getItem("allHighScores"));
     for (var key in listOfHighScores) {
         var li = document.createElement("li");
-        li.textContent = "Initials: " + key + "Score: " + listOfHighScores[key];
+        li.textContent = "Initials:  " + key + ",  Score: " + listOfHighScores[key];
         highScoresDisplayUL.append(li);
 
     }
@@ -267,8 +259,13 @@ function showHighScores() {
 
 }
 
+// Run the program --------------------------------------------------------------------------------------------------
+homePage();
+
+// Add Event Listeners
+highScoresDiv.addEventListener("click", showHighScores);
+
 // ---------------------------------------------------------------------------------------------------
 
-// ADD SOUNDS TO INCORRECT AND CORRECT ANSWERS
 
 

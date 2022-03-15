@@ -3,7 +3,7 @@ A multiple choice quiz
 
 ## Site Link
 
-[www.javascriptquiz.com](https://timp1990.github.io/HW-Wk4-Quiz/)
+[www.javascriptquiz.com](https://timp1990.github.io/Javascript-Quiz/)
 
 ## Description
 
